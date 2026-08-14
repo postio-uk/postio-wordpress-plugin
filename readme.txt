@@ -70,7 +70,7 @@ You need a Postio account. The plugin itself is free; usage is metered against y
 
 = Which form builders are supported? =
 
-WooCommerce plus seven form builders. Five of the eight wire themselves; the other three take one class per field, with the snippet shown to you on the settings screen. Anything not on the list works through Custom mappings. Want a builder added to the automatic list? Email admin@postio.co.uk or ask in the support forum.
+WooCommerce plus seven form builders. Five of the eight wire themselves; the other three take one class per field, with the snippet shown to you on the settings screen. Anything not on the list works through Custom mappings. Want a builder added to the automatic list? Email admin@postio.co.uk, or open an issue at https://github.com/postio-uk/postio-wordpress-plugin.
 
 = My builder isn't listed — will this still work? =
 
@@ -116,7 +116,7 @@ Operated by Onno Group Limited (registered in England & Wales, company no. 08622
 
 = Where is the source for the bundled script? =
 
-`assets/address-finder.js` is a build of the `@postio/address-finder-bundled` package (MIT licensed), published on npm. You do not need to go anywhere to read it: the complete original TypeScript source is embedded in the source map shipped alongside it, `assets/address-finder.js.map`.
+`assets/address-finder.js` is a build of the `@postio/address-finder-bundled` package (MIT licensed), published on npm. You do not need to go anywhere to read it: the complete original TypeScript source is embedded in the source map shipped alongside it, `assets/address-finder.js.map`. The plugin's own source is at https://github.com/postio-uk/postio-wordpress-plugin.
 
 == Screenshots ==
 
