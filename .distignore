@@ -31,3 +31,4 @@ README.md
 .idea
 .vscode
 .seed-settings.php
+.seed-tmp

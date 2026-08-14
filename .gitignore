@@ -29,3 +29,6 @@ build/
 
 # Build output from bin/build-zip.sh
 dist/
+
+# Scratch dir used by local dev scripts; never committed.
+.seed-tmp/
