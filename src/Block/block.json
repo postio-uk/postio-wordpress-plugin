@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "postio/address-finder",
+	"version": "0.2.0",
+	"title": "Postio Address Finder",
+	"category": "widgets",
+	"icon": "location",
+	"description": "UK address autocomplete. Drop into any page and bind the dropdown's outputs to existing form fields by CSS selector.",
+	"keywords": ["address", "postcode", "autocomplete", "uk", "postio"],
+	"textdomain": "postio-address-validation",
+	"supports": {
+		"html": false,
+		"align": ["wide"],
+		"customClassName": true
+	},
+	"attributes": {
+		"inputId": {
+			"type": "string",
+			"default": ""
+		},
+		"inputLabel": {
+			"type": "string",
+			"default": "Find your address"
+		},
+		"inputPlaceholder": {
+			"type": "string",
+			"default": "Start typing your postcode or street"
+		},
+		"outputLine1":    { "type": "string", "default": "" },
+		"outputLine2":    { "type": "string", "default": "" },
+		"outputTown":     { "type": "string", "default": "" },
+		"outputPostcode": { "type": "string", "default": "" }
+	},
+	"render": "file:./render.php",
+	"editorScript": "file:./editor.js"
+}

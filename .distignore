@@ -1,0 +1,33 @@
+# Everything here is development-only and must not reach the WP.org SVN
+# trunk. Plugin Check's "plugin_repo" category errors on hidden files,
+# shell scripts and stray markdown, so this list is what keeps it clean.
+#
+# Build the distributable with:
+#   ./bin/build-zip.sh
+
+.git
+.gitignore
+.gitattributes
+.github
+.distignore
+.distignore.local
+.wp-env.json
+.wp-env.override.json
+wp-env
+
+# Listing artwork goes to SVN assets/, a sibling of trunk/ — never into
+# the plugin itself. It's also a dot-directory, so shipping it would trip
+# Plugin Check's hidden_files error.
+.wporg-assets
+bin
+node_modules
+vendor
+CLAUDE.md
+KNOWN_ISSUES.md
+README.md
+*.zip
+*.log
+.DS_Store
+.idea
+.vscode
+.seed-settings.php

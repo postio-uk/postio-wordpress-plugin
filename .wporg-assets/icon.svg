@@ -1,0 +1,20 @@
+<!--
+  Postio iconmark: square brackets with a centred dot.
+
+  Drawn as stroked paths rather than type, so it renders identically
+  without depending on a font being installed, and stays crisp at 128px.
+
+  Brackets are off-white and the dot is pure white — the mark is
+  monochrome. Do not colour the brackets; the green in the brand palette
+  is a UI accent, not part of the logo.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" fill="#04080F"/>
+
+  <g fill="none" stroke="#F0F2F6" stroke-width="16" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M110 60 H64 V196 H110"/>
+    <path d="M146 60 H192 V196 H146"/>
+  </g>
+
+  <circle cx="128" cy="128" r="19" fill="#FFFFFF"/>
+</svg>

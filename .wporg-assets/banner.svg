@@ -1,0 +1,51 @@
+<!--
+  Woo Marketplace / WP.org listing banner.
+
+  The wordmark stands alone — no iconmark beside it. [postio] already
+  carries the bracket motif, so repeating it at 30px just reads as
+  clutter. Monochrome off-white, matching the brand assets. Green
+  appears only as a UI accent inside the mock autocomplete (the focus
+  ring and the base rule) — never on the logo itself.
+
+  Headline is sized to clear the mock card at 772px. If you edit the
+  copy, re-render and check the small size, not just the retina one.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 250" width="772" height="250">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04080F"/>
+      <stop offset="100%" stop-color="#0D1626"/>
+    </linearGradient>
+    <clipPath id="card"><rect x="430" y="46" width="308" height="158" rx="10"/></clipPath>
+  </defs>
+
+  <rect width="772" height="250" fill="url(#bg)"/>
+  <rect x="0" y="246" width="772" height="4" fill="#22C55E"/>
+
+  <!-- wordmark: monochrome, brackets included -->
+  <text x="46" y="72" font-family="Liberation Mono, DejaVu Sans Mono, monospace"
+        font-size="27" font-weight="700" letter-spacing="-1" fill="#F0F2F6">[postio]</text>
+
+  <text x="46" y="126" font-family="Lato, DejaVu Sans, sans-serif" font-size="30"
+        font-weight="700" fill="#F5F6F8">UK address autocomplete</text>
+  <text x="46" y="160" font-family="Lato, DejaVu Sans, sans-serif" font-size="30"
+        font-weight="700" fill="#22C55E">for any form.</text>
+
+  <!-- WooCommerce is not a form builder: it is Woo PLUS seven builders. -->
+  <text x="46" y="202" font-family="Lato, DejaVu Sans, sans-serif" font-size="15"
+        fill="#A0A3B0">Royal Mail PAF &#183; WooCommerce &#183; 7 form builders</text>
+
+  <!-- right: a real autocomplete in mid-search -->
+  <rect x="430" y="46" width="308" height="158" rx="10" fill="#080F1C" stroke="#162038" stroke-width="1.5"/>
+  <g clip-path="url(#card)">
+    <rect x="446" y="62" width="276" height="34" rx="6" fill="#04080F" stroke="#22C55E" stroke-width="1.5"/>
+    <text x="461" y="84" font-family="Lato, DejaVu Sans, sans-serif" font-size="14" fill="#F5F6F8">57 Wimpole</text>
+    <rect x="546" y="70" width="1.5" height="18" fill="#22C55E"/>
+
+    <rect x="446" y="104" width="276" height="30" rx="5" fill="#162038"/>
+    <text x="461" y="124" font-family="Lato, DejaVu Sans, sans-serif" font-size="13.5" fill="#F5F6F8">57 Wimpole Street, London, W1G 8YW</text>
+
+    <text x="461" y="153" font-family="Lato, DejaVu Sans, sans-serif" font-size="13.5" fill="#A0A3B0">57A Wimpole Street, London, W1G 8YW</text>
+    <text x="461" y="181" font-family="Lato, DejaVu Sans, sans-serif" font-size="13.5" fill="#A0A3B0">Flat 1, 57 Wimpole Street, London</text>
+  </g>
+</svg>

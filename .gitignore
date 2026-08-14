@@ -1,0 +1,31 @@
+# Local dev (wp-env spins up Docker; instance state is per-machine)
+.wp-env.override.json
+wp-env/*
+# ...but the demo seed data IS shared — bin/seed-demo-content.sh rebuilds
+# the whole demo site from it after a `wp-env destroy`.
+!wp-env/seed/
+wp-env/plugins-pro/
+
+# Temp file the seed script writes so the API key never lands in `ps`.
+.seed-settings.php
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# Node (used only for block builds)
+node_modules/
+build/
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Distribution artefacts (created by build scripts; never committed)
+*.zip
+.distignore.local
+
+# Build output from bin/build-zip.sh
+dist/

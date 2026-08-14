@@ -1,0 +1,21 @@
+{
+	"core": null,
+	"phpVersion": "8.1",
+	"testsEnvironment": false,
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/contact-form-7.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/wpforms-lite.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/fluentform.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/ninja-forms.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/forminator.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/elementor.latest-stable.zip"
+	],
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+		"WP_DEBUG_DISPLAY": false,
+		"SCRIPT_DEBUG": true
+	}
+}

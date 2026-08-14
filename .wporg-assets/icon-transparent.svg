@@ -1,0 +1,12 @@
+<!--
+  Iconmark on a transparent ground, for placing on a light background.
+  Same geometry as icon.svg; the marks invert to the dark brand navy.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <g fill="none" stroke="#04080F" stroke-width="16" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M110 60 H64 V196 H110"/>
+    <path d="M146 60 H192 V196 H146"/>
+  </g>
+
+  <circle cx="128" cy="128" r="19" fill="#04080F"/>
+</svg>

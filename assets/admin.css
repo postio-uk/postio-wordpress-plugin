@@ -1,0 +1,253 @@
+.postio-av-wrap h2 {
+	margin-top: 2.4em;
+	border-top: 1px solid #dcdcde;
+	padding-top: 1.2em;
+}
+
+.postio-av-wrap h2:first-of-type {
+	border-top: 0;
+	padding-top: 0;
+}
+
+.postio-av-wrap .postio-av-test-result {
+	margin-left: 0.6em;
+	font-size: 13px;
+}
+
+.postio-av-wrap .postio-av-test-result.is-ok {
+	color: #007017;
+}
+
+.postio-av-wrap .postio-av-test-result.is-fail {
+	color: #b32d2e;
+}
+
+/* --- API key: three states -------------------------------------------
+ *
+ * data-has-key says whether one is stored; .is-modified is toggled by
+ * admin.js when the field differs from what was saved. Everything
+ * optional is hidden by default and switched on per state, so a state we
+ * haven't thought about shows the safe minimum rather than every control
+ * at once.
+ */
+.postio-av-key-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	margin-left: 0.5em;
+}
+
+.postio-av-key .postio-av-only-save,
+.postio-av-key .postio-av-only-test,
+.postio-av-key .postio-av-only-cancel,
+.postio-av-key .postio-av-key-dirty,
+.postio-av-key .postio-av-key-intro {
+	display: none;
+}
+
+/* No key stored: save it, and explain why it's worth doing. */
+.postio-av-key[data-has-key="0"] .postio-av-only-save,
+.postio-av-key[data-has-key="0"] .postio-av-key-intro {
+	display: revert;
+}
+
+/* Key stored and untouched: just offer the test. */
+.postio-av-key[data-has-key="1"]:not(.is-modified) .postio-av-only-test {
+	display: revert;
+}
+
+/* Key stored but edited: save, test what's typed, or back out. */
+.postio-av-key[data-has-key="1"].is-modified .postio-av-only-save,
+.postio-av-key[data-has-key="1"].is-modified .postio-av-only-test,
+.postio-av-key[data-has-key="1"].is-modified .postio-av-only-cancel {
+	display: revert;
+}
+
+.postio-av-key[data-has-key="1"].is-modified .postio-av-key-dirty {
+	display: block;
+}
+
+.postio-av-key-dirty {
+	margin: 0.7em 0 0;
+	padding: 0.5em 0.8em;
+	max-width: 46em;
+	background: #fcf6e6;
+	border-left: 3px solid #e6c86e;
+	color: #825b00;
+	font-size: 13px;
+}
+
+.postio-av-key-intro {
+	margin-top: 0.9em;
+	max-width: 46em;
+}
+
+.postio-av-key-intro h3 {
+	margin: 1em 0 0.3em;
+	font-size: 13px;
+}
+
+.postio-av-key .button-link {
+	color: #b32d2e;
+	text-decoration: underline;
+}
+
+/* --- builder rows ----------------------------------------------------- */
+
+.postio-av-help {
+	margin-left: 5px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #4f94d4;
+	text-decoration: none;
+}
+
+.postio-av-help:hover,
+.postio-av-help:focus {
+	color: #2271b1;
+	text-decoration: underline;
+}
+
+.postio-av-support {
+	margin-top: 1em;
+}
+
+.postio-av-footer {
+	margin-top: 2em;
+	padding-top: 1em;
+	border-top: 1px solid #dcdcde;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.postio-av-builders {
+	margin: 0 0 0.8em;
+	max-width: 46em;
+}
+
+.postio-av-builder-row {
+	margin: 0;
+	padding: 0.45em 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.postio-av-builder-row:last-child {
+	border-bottom: 0;
+}
+
+/* Wide enough for the longest builder name plus its Help? link, so the
+   status pills line up in a column instead of jostling. */
+.postio-av-builder-row > label {
+	display: inline-block;
+	min-width: 19em;
+}
+
+.postio-av-builder-name {
+	font-weight: 600;
+}
+
+.postio-av-pill {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 1.6;
+	padding: 0 0.6em;
+	border-radius: 9px;
+	border: 1px solid transparent;
+	vertical-align: middle;
+}
+
+.postio-av-pill.is-ok {
+	background: #edfaef;
+	border-color: #a7d8b0;
+	color: #007017;
+}
+
+.postio-av-pill.is-warn {
+	background: #fcf6e6;
+	border-color: #e6c86e;
+	color: #825b00;
+}
+
+.postio-av-pill.is-off {
+	background: #f0f0f1;
+	border-color: #dcdcde;
+	color: #646970;
+}
+
+.postio-av-wiring {
+	margin: 0.5em 0 0.2em 2em;
+	padding: 0.6em 0.9em;
+	background: #fcf9f2;
+	border-left: 3px solid #e6c86e;
+	max-width: 42em;
+}
+
+.postio-av-wiring p {
+	margin: 0 0 0.5em;
+}
+
+.postio-av-wiring p:last-child {
+	margin-bottom: 0;
+}
+
+.postio-av-wiring pre {
+	margin: 0 0 0.5em;
+	padding: 0.6em 0.8em;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	overflow-x: auto;
+	font-size: 12px;
+	white-space: pre;
+}
+
+.postio-av-mapping {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 1em 1.2em;
+	margin-bottom: 0.8em;
+}
+
+.postio-av-mapping-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.6em 1.2em;
+}
+
+.postio-av-mapping-grid label {
+	display: block;
+}
+
+.postio-av-mapping-grid label span {
+	display: block;
+	font-size: 12px;
+	color: #50575e;
+	margin-bottom: 0.2em;
+}
+
+.postio-av-mapping-grid input[type="text"] {
+	width: 100%;
+}
+
+.postio-av-mapping .postio-av-remove-mapping {
+	margin-top: 0.6em;
+	color: #b32d2e;
+}
+
+.postio-av-advanced {
+	margin-top: 2em;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 0.6em 1em;
+}
+
+.postio-av-advanced summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.postio-av-advanced[open] {
+	padding-bottom: 1em;
+}
