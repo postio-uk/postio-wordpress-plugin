@@ -1,14 +1,14 @@
-=== Postio Address Validation ===
+=== UK Address Autocomplete & Postcode Lookup for Forms & WooCommerce ===
 Contributors: postio
-Tags: address autocomplete, postcode lookup, address validation, uk address lookup, woocommerce
+Tags: postcode lookup, uk address, address autocomplete, address finder, woocommerce
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-UK address autocomplete for WooCommerce and every major form builder. Royal Mail PAF + Ordnance Survey data. Most builders wire themselves.
+UK postcode lookup and address autocomplete on Royal Mail PAF. WooCommerce, Gravity, WPForms, Elementor, CF7 — most wire themselves.
 
 == Description ==
 
@@ -104,19 +104,22 @@ Postio's data is UK-only (Royal Mail PAF + Ordnance Survey). Use it on UK addres
 
 The plugin sends no customer data to Postio's servers — only the postcode / search terms the customer types into the autocomplete, and only while they're typing. No customer data is logged on Postio's side beyond the request itself.
 
-= Third-party service disclosure =
-
-This plugin talks to exactly one external service, and only to do the job you installed it for:
-
-* `https://api.postio.co.uk` — the Postio validation API. Called from the customer's browser as they type into a wired address field, and once from your server when you press **Test connection**. It sends the search text and your API key, nothing else. Privacy policy: https://postio.co.uk/privacy. Terms: https://postio.co.uk/terms.
-
-There is no analytics, no usage tracking and no phoning home. The plugin contacts nothing unless a visitor is actively using an address field, or you press Test connection. No executable code is downloaded from anywhere — the autocomplete script is bundled in the plugin at `assets/address-finder.js`.
-
-Operated by Onno Group Limited (registered in England & Wales, company no. 08622799). Registered office: Suite 22 Trym Lodge, 1 Henbury Road, Westbury-On-Trym, Bristol BS9 3HQ.
-
 = Where is the source for the bundled script? =
 
 `assets/address-finder.js` is a build of the `@postio/address-finder-bundled` package (MIT licensed), published on npm. You do not need to go anywhere to read it: the complete original TypeScript source is embedded in the source map shipped alongside it, `assets/address-finder.js.map`. The plugin's own source is at https://github.com/postio-uk/postio-wordpress-plugin.
+
+== External services ==
+
+This plugin connects to the Postio API to look up UK addresses. The service is required — address autocomplete cannot work without it, because the address data lives on Postio's servers, not in your WordPress install.
+
+* **Service:** Postio validation API — https://postio.co.uk (API endpoint `https://api.postio.co.uk`), operated by Onno Group Limited, registered in England & Wales, company no. 08622799. Registered office: Suite 22 Trym Lodge, 1 Henbury Road, Westbury-On-Trym, Bristol BS9 3HQ.
+* **What it does:** returns matching UK addresses for a postcode or partial address, from Royal Mail PAF and Ordnance Survey data.
+* **What is sent:** the postcode or address text typed into a wired field, your API key, and the site's origin URL. Nothing else. No names, no email addresses, no order data, no personal data beyond the address text itself.
+* **When it is sent:** only when a visitor is actively typing into an address field the plugin is attached to, or when you press **Test connection** on the settings screen. Nothing is sent until you have entered an API key, and nothing is sent in the background — there is no analytics, no usage tracking and no phoning home.
+* **Terms of service:** https://postio.co.uk/terms
+* **Privacy policy:** https://postio.co.uk/privacy
+
+No executable code is downloaded from anywhere. The autocomplete script is bundled in the plugin at `assets/address-finder.js`.
 
 == Screenshots ==
 
@@ -126,6 +129,9 @@ Operated by Onno Group Limited (registered in England & Wales, company no. 08622
 4. The Postio Address Finder block in the editor sidebar.
 
 == Changelog ==
+
+= 1.0.0 =
+* First release on the WordPress.org plugin directory.
 
 = 0.2.0 =
 * Settings link on the Plugins screen, next to Deactivate.
@@ -146,6 +152,9 @@ Operated by Onno Group Limited (registered in England & Wales, company no. 08622
 * Custom mappings UI for any other form builder.
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+First release on the WordPress.org plugin directory.
 
 = 0.2.0 =
 Clearer setup: a Settings link on the Plugins screen, live builder detection, and inline wiring instructions for the builders that need them.
