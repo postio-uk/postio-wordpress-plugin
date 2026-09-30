@@ -4,7 +4,7 @@ Tags: postcode lookup, uk address, address autocomplete, address finder, woocomm
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,9 @@ No executable code is downloaded from anywhere. The autocomplete script is bundl
 4. The Postio Address Finder block in the editor sidebar.
 
 == Changelog ==
+
+= 1.0.1 =
+* Settings page no longer quotes a fixed per-lookup price; it links to postio.co.uk/pricing instead.
 
 = 1.0.0 =
 * First release on the WordPress.org plugin directory.

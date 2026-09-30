@@ -3,7 +3,7 @@
  * Plugin Name:       UK Address Autocomplete & Postcode Lookup for Forms & WooCommerce
  * Plugin URI:        https://postio.co.uk/integrations/wordpress
  * Description:       UK address autocomplete for WooCommerce and the major form builders. Powered by the Postio validation API.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Postio
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'POSTIO_AV_VERSION', '1.0.0' );
+define( 'POSTIO_AV_VERSION', '1.0.1' );
 define( 'POSTIO_AV_FILE', __FILE__ );
 define( 'POSTIO_AV_PATH', plugin_dir_path( __FILE__ ) );
 define( 'POSTIO_AV_URL', plugin_dir_url( __FILE__ ) );

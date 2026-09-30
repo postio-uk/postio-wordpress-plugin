@@ -98,7 +98,7 @@ $postio_av_opt = Settings::OPTION_KEY;
 							<p class="description">
 								<?php
 								esc_html_e(
-									"We're a licensed Royal Mail PAF provider, so you're searching the official Postcode Address File — the same file the postman works from. Royal Mail updates it every working day from changes reported on the ground, and we sync nightly, so new builds and renamed streets appear quickly. Pricing is pay as you go at 2.2p a lookup, with no monthly fee and no minimum. Searching is free, so you only pay when a customer actually picks an address.",
+									"We're a licensed Royal Mail PAF provider, so you're searching the official Postcode Address File — the same file the postman works from. Royal Mail updates it every working day from changes reported on the ground, and we sync nightly, so new builds and renamed streets appear quickly. Pricing is pay as you go from 1p a lookup, with no monthly fee and no minimum — current rates are at postio.co.uk/pricing. Searching is free, so you only pay when a customer actually picks an address.",
 									'postio-address-validation'
 								);
 								?>
