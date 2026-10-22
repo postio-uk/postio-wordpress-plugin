@@ -170,10 +170,6 @@ $postio_av_opt = Settings::OPTION_KEY;
 			</tr>
 		</table>
 
-		<p class="postio-av-lookup-save">
-			<?php submit_button( __( 'Save changes', 'postio-address-validation' ), 'secondary', 'submit-lookup', false ); ?>
-		</p>
-
 		<h2><?php esc_html_e( 'Form builder detection', 'postio-address-validation' ); ?></h2>
 		<table class="form-table" role="presentation">
 			<tr>
