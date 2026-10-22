@@ -109,6 +109,71 @@ $postio_av_opt = Settings::OPTION_KEY;
 			</tr>
 		</table>
 
+		<?php
+		$postio_av_mode = Settings::lookup_mode();
+		$postio_av_max  = Settings::max_results();
+		?>
+		<h2 id="postio-av-lookup"><?php esc_html_e( 'How customers find their address', 'postio-address-validation' ); ?></h2>
+		<p class="description postio-av-lookup-intro">
+			<?php esc_html_e( 'Pick the one that feels most natural to your customers. You can switch at any time, and it applies to every address box on your site.', 'postio-address-validation' ); ?>
+		</p>
+		<fieldset class="postio-av-modes">
+			<legend class="screen-reader-text"><?php esc_html_e( 'Lookup style', 'postio-address-validation' ); ?></legend>
+
+			<label class="postio-av-mode">
+				<input type="radio" name="<?php echo esc_attr( $postio_av_opt ); ?>[lookup_mode]" value="<?php echo esc_attr( Settings::MODE_SEARCH ); ?>" <?php checked( Settings::MODE_SEARCH, $postio_av_mode ); ?> />
+				<span class="postio-av-mode-body">
+					<strong><?php esc_html_e( 'Type-ahead search', 'postio-address-validation' ); ?></strong>
+					<span class="postio-av-mode-tag"><?php esc_html_e( 'Default', 'postio-address-validation' ); ?></span>
+					<span class="postio-av-mode-text"><?php esc_html_e( 'Customers start typing anything — their house, street or postcode — and matching addresses appear as they type. They tap theirs and the form fills itself in.', 'postio-address-validation' ); ?></span>
+					<span class="postio-av-mode-cost"><?php esc_html_e( 'Searching is free. You pay for one lookup when a customer picks an address.', 'postio-address-validation' ); ?></span>
+				</span>
+			</label>
+
+			<label class="postio-av-mode">
+				<input type="radio" name="<?php echo esc_attr( $postio_av_opt ); ?>[lookup_mode]" value="<?php echo esc_attr( Settings::MODE_POSTCODE ); ?>" <?php checked( Settings::MODE_POSTCODE, $postio_av_mode ); ?> />
+				<span class="postio-av-mode-body">
+					<strong><?php esc_html_e( 'Postcode lookup', 'postio-address-validation' ); ?></strong>
+					<span class="postio-av-mode-text"><?php esc_html_e( 'Customers type their postcode and see a list of every address at it — even big blocks of flats. They pick theirs and the form fills itself in. The classic "enter your postcode, choose your address" that most UK shoppers know.', 'postio-address-validation' ); ?></span>
+					<span class="postio-av-mode-cost"><?php esc_html_e( 'You pay for one lookup per postcode searched. Picking from the list costs nothing extra.', 'postio-address-validation' ); ?></span>
+				</span>
+			</label>
+		</fieldset>
+
+		<table class="form-table postio-av-results-row" role="presentation" data-mode="<?php echo esc_attr( $postio_av_mode ); ?>">
+			<tr>
+				<th scope="row">
+					<label for="postio-av-max-results"><?php esc_html_e( 'Suggestions to show', 'postio-address-validation' ); ?></label>
+				</th>
+				<td>
+					<input
+						type="number"
+						class="small-text"
+						id="postio-av-max-results"
+						name="<?php echo esc_attr( $postio_av_opt ); ?>[max_results]"
+						value="<?php echo esc_attr( (string) $postio_av_max ); ?>"
+						min="1"
+						max="<?php echo esc_attr( (string) Settings::MAX_RESULTS_CAP ); ?>"
+						step="1"
+					/>
+					<p class="description">
+						<?php
+						printf(
+							/* translators: 1: default number, 2: maximum number. */
+							esc_html__( 'How many addresses type-ahead shows at once. %1$d suits most shops; you can go up to %2$d and the list scrolls. Postcode lookup always shows every address, so this only affects type-ahead.', 'postio-address-validation' ),
+							(int) Settings::MAX_RESULTS_DEFAULT,
+							(int) Settings::MAX_RESULTS_CAP
+						);
+						?>
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<p class="postio-av-lookup-save">
+			<?php submit_button( __( 'Save changes', 'postio-address-validation' ), 'secondary', 'submit-lookup', false ); ?>
+		</p>
+
 		<h2><?php esc_html_e( 'Form builder detection', 'postio-address-validation' ); ?></h2>
 		<table class="form-table" role="presentation">
 			<tr>

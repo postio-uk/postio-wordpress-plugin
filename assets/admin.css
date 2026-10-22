@@ -251,3 +251,68 @@
 .postio-av-advanced[open] {
 	padding-bottom: 1em;
 }
+
+/* --- How customers find their address --------------------------------- */
+
+.postio-av-wrap .postio-av-modes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 12px;
+	max-width: 820px;
+	margin: 12px 0 4px;
+}
+
+.postio-av-wrap .postio-av-mode {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	padding: 14px 16px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.postio-av-wrap .postio-av-mode:has(input:checked) {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+.postio-av-wrap .postio-av-mode input {
+	margin-top: 3px;
+}
+
+.postio-av-wrap .postio-av-mode-body {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 4px 8px;
+}
+
+.postio-av-wrap .postio-av-mode-text,
+.postio-av-wrap .postio-av-mode-cost {
+	flex-basis: 100%;
+	color: #50575e;
+	line-height: 1.5;
+}
+
+.postio-av-wrap .postio-av-mode-cost {
+	font-size: 12px;
+	color: #646970;
+}
+
+.postio-av-wrap .postio-av-mode-tag {
+	font-size: 11px;
+	padding: 1px 6px;
+	border-radius: 9px;
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.postio-av-wrap .postio-av-results-row[data-mode="postcode"] {
+	opacity: 0.55;
+}
+
+.postio-av-wrap .postio-av-lookup-save {
+	margin: 0;
+}

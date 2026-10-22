@@ -137,6 +137,31 @@ final class Settings {
 		];
 	}
 
+	/** Type-ahead: suggestions as the customer types anything. */
+	public const MODE_SEARCH = 'search';
+
+	/** Postcode lookup: type a full postcode, pick from every address at it. */
+	public const MODE_POSTCODE = 'postcode';
+
+	public const MAX_RESULTS_DEFAULT = 7;
+	public const MAX_RESULTS_CAP     = 50;
+
+	public static function lookup_mode(): string {
+		return self::MODE_POSTCODE === self::get( 'lookup_mode' ) ? self::MODE_POSTCODE : self::MODE_SEARCH;
+	}
+
+	public static function max_results(): int {
+		return self::clamp_results( self::get( 'max_results' ) );
+	}
+
+	/**
+	 * @param mixed $value
+	 */
+	private static function clamp_results( $value ): int {
+		$n = is_numeric( $value ) ? (int) $value : self::MAX_RESULTS_DEFAULT;
+		return max( 1, min( self::MAX_RESULTS_CAP, $n ) );
+	}
+
 	/** @var Settings|null */
 	private static $instance = null;
 
@@ -153,6 +178,8 @@ final class Settings {
 			'auto_detect'     => true,
 			'builders'        => array_fill_keys( array_keys( self::BUILDERS ), true ),
 			'custom_mappings' => [],
+			'lookup_mode'     => self::MODE_SEARCH,
+			'max_results'     => self::MAX_RESULTS_DEFAULT,
 			'bundle_url'      => '',
 			'api_url'         => '',
 		];
@@ -196,7 +223,7 @@ final class Settings {
 	}
 
 	/** Version of @postio/address-finder-bundled shipped in assets/. */
-	public const BUNDLE_VERSION = '1.1.0';
+	public const BUNDLE_VERSION = '1.2.0';
 
 	/**
 	 * The address finder script is served from the plugin, not a CDN.
@@ -402,6 +429,13 @@ final class Settings {
 			}
 		}
 		$out['custom_mappings'] = $mappings;
+
+		$out['lookup_mode'] = ( isset( $input['lookup_mode'] ) && self::MODE_POSTCODE === $input['lookup_mode'] )
+			? self::MODE_POSTCODE
+			: self::MODE_SEARCH;
+		$out['max_results'] = isset( $input['max_results'] )
+			? self::clamp_results( $input['max_results'] )
+			: self::MAX_RESULTS_DEFAULT;
 
 		$out['bundle_url'] = isset( $input['bundle_url'] )
 			? esc_url_raw( trim( (string) $input['bundle_url'] ) )

@@ -4,7 +4,7 @@ Tags: postcode lookup, uk address, address autocomplete, address finder, woocomm
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,16 @@ Add **Display CSS Classes** on the relevant fields — `postio-line-1`, `postio-
 
 Elementor Forms is part of Elementor Pro. On each address field's **Advanced → Custom CSS Classes**, add the matching class — `postio-line-1`, `postio-line-2`, `postio-town`, `postio-postcode`. Add `postio-search` to a dedicated lookup field if you want one separate from line 1. Only `postio-line-1` is required.
 
+= Can customers just type their postcode and pick from a list? =
+
+Yes. Under Settings → Postio → How customers find their address, choose **Postcode lookup**. Customers type their full postcode and see every address at it — up to about 100, enough for the largest blocks of flats — then pick theirs. You pay for one lookup per postcode searched; picking from the list costs nothing extra.
+
+The default, **Type-ahead search**, suggests addresses as customers type anything (house, street or postcode). Searching is free and you pay one lookup when they pick an address.
+
+= Can type-ahead show more than 7 suggestions? =
+
+Yes. Set **Suggestions to show** to any number from 1 to 50 on the settings screen. The list scrolls.
+
 = Will Postio overwrite my country dropdown? =
 
 No. Country fields are intentionally not auto-mapped: most form builders use ISO country codes (`GB`, `US`) in their dropdowns, but Postio returns the constituent UK country (`England`, `Scotland`, etc.). Setting an unmatched value would clear the dropdown, which is worse than leaving it on whatever the customer already chose.
@@ -130,6 +140,12 @@ No executable code is downloaded from anywhere. The autocomplete script is bundl
 
 == Changelog ==
 
+= 1.1.0 =
+* New: Postcode lookup mode. Customers type their postcode and choose from every address at it, in number order, with a scrolling list.
+* New: "Suggestions to show" setting for type-ahead — default 7, up to 50.
+* New: Plain-English guide on the settings screen to help you pick between the two.
+* Pressing Enter inside an open address list no longer submits the form.
+
 = 1.0.1 =
 * Settings page no longer quotes a fixed per-lookup price; it links to postio.co.uk/pricing instead.
 
@@ -155,6 +171,9 @@ No executable code is downloaded from anywhere. The autocomplete script is bundl
 * Custom mappings UI for any other form builder.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Adds a postcode lookup mode and a setting for how many type-ahead suggestions to show.
 
 = 1.0.0 =
 First release on the WordPress.org plugin directory.

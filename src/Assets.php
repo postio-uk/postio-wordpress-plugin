@@ -114,9 +114,21 @@ final class Assets {
 		// it concatenates baseUrl + '/connect' / '/address/search' etc.
 		// Settings::api_url() returns the host root, so append /v1 here.
 		$payload = [
-			'apiKey'  => $api_key,
-			'baseUrl' => rtrim( Settings::api_url(), '/' ) . '/v1',
-			'setups'  => $this->setups,
+			'apiKey'     => $api_key,
+			'baseUrl'    => rtrim( Settings::api_url(), '/' ) . '/v1',
+			'mode'       => Settings::lookup_mode(),
+			'maxResults' => Settings::max_results(),
+			'labels'     => [
+				'postcodeHint'     => __( 'Enter your full postcode to see every address, e.g. BA2 4QT', 'postio-address-validation' ),
+				'postcodeLoading'  => __( 'Finding addresses…', 'postio-address-validation' ),
+				/* translators: {count} and {postcode} are filled in by the script — keep them as written. */
+				'postcodeCount'    => __( '{count} addresses at {postcode}', 'postio-address-validation' ),
+				/* translators: {postcode} is filled in by the script — keep it as written. */
+				'postcodeCountOne' => __( '1 address at {postcode}', 'postio-address-validation' ),
+				/* translators: {postcode} is filled in by the script — keep it as written. */
+				'postcodeNone'     => __( 'No addresses found at {postcode}. Check the postcode, or type your address in.', 'postio-address-validation' ),
+			],
+			'setups'     => $this->setups,
 		];
 
 		$json = wp_json_encode(
@@ -156,7 +168,9 @@ final class Assets {
 			. 'if(!window.Postio||!window.Postio.AddressFinder)return;'
 			. 'var inp=(typeof s.input==="string")?document.querySelector(s.input):s.input;'
 			. 'if(!inp)return;'
-			. 'var opts=Object.assign({apiKey:cfg.apiKey,baseUrl:cfg.baseUrl},s);'
+			// Site-wide lookup settings first, so a single setup can still
+			// override them.
+			. 'var opts=Object.assign({apiKey:cfg.apiKey,baseUrl:cfg.baseUrl,mode:cfg.mode,maxResults:cfg.maxResults,labels:cfg.labels},s);'
 			. 'var line1=s.output&&s.output.address_line_1;'
 			. 'var handle=null,justPicked=false;'
 			// React installs a value tracker on every controlled input. A

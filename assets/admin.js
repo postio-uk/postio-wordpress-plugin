@@ -138,3 +138,19 @@
 		});
 	}
 })();
+
+// Grey out "Suggestions to show" while postcode lookup is picked — it only
+// applies to type-ahead.
+( function () {
+	var row = document.querySelector( '.postio-av-results-row' );
+	if ( ! row ) {
+		return;
+	}
+	document.querySelectorAll( '.postio-av-modes input[type="radio"]' ).forEach( function ( radio ) {
+		radio.addEventListener( 'change', function () {
+			if ( radio.checked ) {
+				row.setAttribute( 'data-mode', radio.value );
+			}
+		} );
+	} );
+} )();
