@@ -1,10 +1,10 @@
 === UK Address Autocomplete & Postcode Lookup for Forms & WooCommerce ===
 Contributors: postio
-Tags: postcode lookup, uk address, address autocomplete, address finder, woocommerce
+Tags: postcode, address, address-autocomplete, postcode-lookup, woocommerce
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +139,9 @@ No executable code is downloaded from anywhere. The autocomplete script is bundl
 4. The Postio Address Finder block in the editor sidebar.
 
 == Changelog ==
+
+= 1.1.1 =
+* Readme: updated tags.
 
 = 1.1.0 =
 * New: Postcode lookup mode. Customers type their postcode and choose from every address at it, in number order, with a scrolling list.
